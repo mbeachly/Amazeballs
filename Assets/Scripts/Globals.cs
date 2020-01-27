@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // This is a class to store global variables 
 // such as background file path, start point, and endpoint
@@ -18,4 +19,7 @@ public static class Globals
     // Set end point
     public static int endX = -3;
     public static int endZ = 0;
+
+    // Declare timeText variable
+    public static string timeText;
 }

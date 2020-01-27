@@ -5,7 +5,8 @@ using UnityEngine;
 public class WinState : MonoBehaviour
 {
     SceneLoader scene;
-    // Load win screne when ball triggers red plane
+
+    // Load win scene when ball triggers red plane
 
     private void Start()
     {   
@@ -18,6 +19,7 @@ public class WinState : MonoBehaviour
         GameObject gameObject = new GameObject("SceneLoader");
         scene = gameObject.AddComponent<SceneLoader>();
         scene.LoadNextScene();
+
     }
     
 }
