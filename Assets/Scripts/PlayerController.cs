@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// Code from https://learn.unity.com/project/roll-a-ball-tutorial
+
 public class PlayerController : MonoBehaviour
 {
     // public makes this accessible from Unity Inspector
@@ -13,12 +13,15 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        // Drop ball at start point
+        rb.transform.position = new Vector3(Globals.startX, 1, Globals.startZ);
     }
 
     // Check for player input before rendering every frame
     //void Update()
 
     // Called before performing physics calculations 
+    // Code from https://learn.unity.com/project/roll-a-ball-tutorial
     void FixedUpdate()
     {
         float moveHorizontal = Input.GetAxis("Horizontal");
