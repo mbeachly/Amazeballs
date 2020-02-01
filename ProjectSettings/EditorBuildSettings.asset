@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/StartGame.unity
     guid: ffba26cf7888c284aabb1880b8fcb0e0
   - enabled: 1
-    path: Assets/Scenes/MiniGame.unity
+    path: Assets/Scenes/MazeGame.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
     path: Assets/Scenes/WinGame.unity
