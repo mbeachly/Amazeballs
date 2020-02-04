@@ -7,7 +7,7 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/StartGame.unity
-    guid: ffba26cf7888c284aabb1880b8fcb0e0
+    guid: d14e5041d3814ac43b2739a2c6b43f62
   - enabled: 1
     path: Assets/Scenes/MazeGame.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
