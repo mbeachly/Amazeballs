@@ -21,7 +21,7 @@ public static class Globals
     public static int endZ = 0;
 
     // Set ball speed
-    public static int ballSpeed = 10;
+    public static int ballSpeed = 5;
 
     // Declare timeText variable
     public static string timeText;

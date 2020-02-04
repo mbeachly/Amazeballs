@@ -37,9 +37,9 @@ public class PlayerController : MonoBehaviour
         Vector3 tilt = Input.acceleration;
         if (isFlat) {
             // Rotate so that up is perpendicular to phone surface
-            tilt = Quaternion.Euler(90, 0, 0) * tilt * Globals.ballSpeed;
+            tilt = Quaternion.Euler(90, 0, 0) * tilt;
         }
 
-        rb.AddForce(tilt);
+        rb.AddForce(tilt * Globals.ballSpeed);
     }
 }
