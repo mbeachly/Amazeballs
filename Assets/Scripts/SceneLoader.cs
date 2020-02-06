@@ -27,6 +27,12 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("MazeGame");
     }
 
+    // Go to Instructions
+    public void LoadInstructions()
+    {   
+        SceneManager.LoadScene("Instructions");
+    }
+
     // Exit the application
     public void Quit()
     {
