@@ -12,16 +12,9 @@ public static class Globals
     // Set image for background
     public static string backgroundFile = "/Materials/PunchbowlFallsU.png";
 
-    // Set start point
-    public static int startX = 3;
-    public static int startZ = 4;
-
     // Set end point
     public static int endX = -3;
     public static int endZ = 0;
-
-    // Set ball speed
-    public static int ballSpeed = 5;
 
     // Declare timeText variable
     public static string timeText;

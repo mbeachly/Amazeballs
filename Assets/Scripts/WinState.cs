@@ -18,8 +18,7 @@ public class WinState : MonoBehaviour
     {
         GameObject gameObject = new GameObject("SceneLoader");
         scene = gameObject.AddComponent<SceneLoader>();
-        scene.LoadNextScene();
-
+        scene.LoadWin();
     }
     
 }
