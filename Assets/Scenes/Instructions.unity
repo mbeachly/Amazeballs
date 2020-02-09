@@ -964,8 +964,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 149042692}
   m_HandleRect: {fileID: 149042691}
   m_Direction: 2
-  m_Value: 1.0000001
-  m_Size: 0.14328879
+  m_Value: 1
+  m_Size: 0.07981599
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1395,8 +1395,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.2, y: -756.05005}
-  m_SizeDelta: {x: 410.8, y: 2119.5}
+  m_AnchoredPosition: {x: 8.2, y: -1598.7998}
+  m_SizeDelta: {x: 410.8, y: 3805}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1995626519
 MonoBehaviour:
@@ -1419,7 +1419,7 @@ MonoBehaviour:
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
     m_FontSize: 40
-    m_FontStyle: 0
+    m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 4
     m_MaxSize: 40
@@ -1432,25 +1432,36 @@ MonoBehaviour:
   m_Text: 'How To Play
 
 
-    The objective of the game is to roll a ball through a maze by tilting your phone.
-    Try to get the ball to the end point as quick as possible. A timer will record
-    how fast you win.
+    The objective of the game is to roll the ball through a maze by tilting your device.
+    Hold your device flat initially and then tip it in the direction you want the
+    ball to roll. Try to get the ball to the end point as quick as possible. A timer
+    will record how quick you are at solving the maze.
 
 
     How to Select a Maze
 
 
-    From the Main Menu go to Select Maze. Here you will find the maze pictures that
-    you have created by importing a picture from your phone and setting start and
-    end points. Select the maze you wish to play and click Play Maze.
+    From the Main Menu go to Select Maze. Here you will find mazes that were created
+    by importing a picture from your device and setting start and end points. Select
+    the maze you wish to play and click Play Maze.
 
 
     How to Create a Maze
 
 
-    Draw a maze on a piece of white paper using a black marker for lines. In AmazeBalls,
-    go to Create Maze. Take a picture of your maze, or select a picture you have already
-    taken. Finally, specify a start point and an end point for the ball.
+    Draw a maze on a piece of white paper using a thick black marker for lines. In
+    the AmazeBalls Main Menu, go to Create Maze. Click Start\Stop Camera, authorize
+    the app to access your camera when asked, and click Start\Stop Camera again. Aim
+    the camera view at your maze, then click Start\Stop Camera to save the picture.
+    Finally, specify a start point and an end point for the ball.
+
+
+    How to Adjust Ball Speed and Size
+
+
+    From the Main Menu, go to Options. Use the Ball Size slider to make the ball smaller
+    by dragging it left, or larger by dragging it right. Use the Ball Speed slider
+    to make the ball slower by dragging it left, or faster by dragging it right.
 
 '
 --- !u!222 &1995626520
