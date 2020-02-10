@@ -17,6 +17,12 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("CaptureImage");
     }
 
+    // Go to Select Maze
+    public void SelectMaze()
+    {
+        SceneManager.LoadScene("SelectMaze");
+    }
+
     // Start the Game
     public void LoadGame()
     {   // Will the maze to load be controlled by global variable?
