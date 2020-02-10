@@ -7,6 +7,7 @@ public class CaptureImage : MonoBehaviour
 {
     WebCamTexture deviceCam;
     public RawImage camDisplay;
+    public Text startCaptureCamera;
     SceneLoader scene;
 
     public void StartCam()
@@ -17,7 +18,7 @@ public class CaptureImage : MonoBehaviour
             deviceCam = null;
             camDisplay.texture = null;
             GameObject gameObject = new GameObject("SceneLoader");
-            scene = gameObject.AddComponent < SceneLoader>();
+            scene = gameObject.AddComponent <SceneLoader>();
             scene.LoadGame();
         }
         else { 
@@ -25,15 +26,16 @@ public class CaptureImage : MonoBehaviour
             {
                 for (int i = 0; i < WebCamTexture.devices.Length; i++)
                 {
-                    if (!WebCamTexture.devices[i].isFrontFacing)
+                    if (WebCamTexture.devices[i].isFrontFacing)
                     {
-                        deviceCam = new WebCamTexture(WebCamTexture.devices[i].name, Screen.width, Screen.height);
+                        deviceCam = new WebCamTexture(WebCamTexture.devices[i].name);
                     }
                 }
                 if (deviceCam != null)
                 {
                     deviceCam.Play();
                     camDisplay.texture = deviceCam;
+                    startCaptureCamera.text = "Capture Image";
                 }
             }
         }
@@ -41,8 +43,23 @@ public class CaptureImage : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void ExitToMainMenu()
     {
-        
+        if (deviceCam != null)
+        {
+            deviceCam.Stop();
+            deviceCam = null;
+            camDisplay.texture = null;
+            GameObject gameObject = new GameObject("SceneLoader");
+            scene = gameObject.AddComponent<SceneLoader>();
+            scene.LoadMainMenu();
+        }
+        else
+        {
+            GameObject gameObject = new GameObject("SceneLoader");
+            scene = gameObject.AddComponent<SceneLoader>();
+            scene.LoadMainMenu();
+        }
+
     }
 }
