@@ -14,6 +14,15 @@ public class CaptureImage : MonoBehaviour
     {
         if (deviceCam != null)
         {
+            Texture2D image = new Texture2D(deviceCam.width, deviceCam.height);
+            image.SetPixels(deviceCam.GetPixels());
+            image.Apply();
+            byte[] bytes = image.EncodeToPNG();
+            var tex = new Texture2D(1, 1);
+            Globals.tex = tex;
+            Globals.tex.LoadImage(bytes);
+            //GetComponent<Renderer>().material.mainTexture = tex;
+        
             deviceCam.Stop();
             deviceCam = null;
             camDisplay.texture = null;
@@ -26,7 +35,7 @@ public class CaptureImage : MonoBehaviour
             {
                 for (int i = 0; i < WebCamTexture.devices.Length; i++)
                 {
-                    if (WebCamTexture.devices[i].isFrontFacing)
+                    if (!WebCamTexture.devices[i].isFrontFacing)
                     {
                         deviceCam = new WebCamTexture(WebCamTexture.devices[i].name);
                     }

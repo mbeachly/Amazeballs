@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class BackGroundLoader : MonoBehaviour
 {
+    public MeshRenderer ground;
+
     private void Start()
     {
         // Load the background plane texture from a specified jpeg or png file
@@ -16,6 +18,11 @@ public class BackGroundLoader : MonoBehaviour
             var tex = new Texture2D(1, 1);
             tex.LoadImage(bytes);
             GetComponent<Renderer>().material.mainTexture = tex;
+        }
+        else
+        {
+    
+            ground.material.mainTexture = Globals.tex;
         }
     }
 }

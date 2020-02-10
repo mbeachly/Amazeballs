@@ -18,4 +18,6 @@ public static class Globals
 
     // Declare timeText variable
     public static string timeText;
+
+    public static Texture2D tex = new Texture2D(1, 1);
 }
