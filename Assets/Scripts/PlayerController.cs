@@ -11,6 +11,9 @@ public class PlayerController : MonoBehaviour
     // Ball Speed
     private static float ballSpeed = 6f; // Default = 5
 
+    // Ball Texture
+    private static string textureName = "hubble"; // Default = hubble
+
     // Start Point Coordinates
     public static int startX = 0;
     public static int startZ = 0;
@@ -50,13 +53,42 @@ public class PlayerController : MonoBehaviour
         return (int)ballSpeed / 2;
     }
 
+    /// <summary>
+    /// Set ball texture to space theme
+    /// </summary>
+    public void SetBallSpace()
+    {
+        textureName = "hubble";
+    }
+
+    /// <summary>
+    /// Set ball texture to smiley face theme
+    /// </summary>
+    public void SetBallSmiley()
+    {
+        textureName = "smiley";
+    }
+    /// <summary>
+    /// Set ball texture to marble theme
+    /// </summary>
+    public void SetBallMarble()
+    {
+        textureName = "marble";
+    }
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
         // Drop ball at start point
         rb.transform.position = new Vector3(startX, ballSize, startZ);
         // Set ball to specified size
         rb.gameObject.transform.localScale = new Vector3(ballSize, ballSize, ballSize);
+
+        // Textures must be in Resources folder for Resources Load to work
+        Texture2D ballTexture = Resources.Load(textureName) as Texture2D;
+        Renderer ballRenderer = GetComponent<Renderer>();
+        ballRenderer.material.SetTexture("_MainTex", ballTexture);
     }
 
 

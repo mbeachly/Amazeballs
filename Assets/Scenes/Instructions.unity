@@ -1429,41 +1429,22 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'How To Play
-
-
-    The objective of the game is to roll the ball through a maze by tilting your device.
-    Hold your device flat initially and then tip it in the direction you want the
-    ball to roll. Try to get the ball to the end point as quick as possible. A timer
-    will record how quick you are at solving the maze.
-
-
-    How to Select a Maze
-
-
-    From the Main Menu go to Select Maze. Here you will find mazes that were created
-    by importing a picture from your device and setting start and end points. Select
-    the maze you wish to play and click Play Maze.
-
-
-    How to Create a Maze
-
-
-    Draw a maze on a piece of white paper using a thick black marker for lines. In
-    the AmazeBalls Main Menu, go to Create Maze. Click Start\Stop Camera, authorize
-    the app to access your camera when asked, and click Start\Stop Camera again. Aim
-    the camera view at your maze, then click Start\Stop Camera to save the picture.
-    Finally, specify a start point and an end point for the ball.
-
-
-    How to Adjust Ball Speed and Size
-
-
-    From the Main Menu, go to Options. Use the Ball Size slider to make the ball smaller
-    by dragging it left, or larger by dragging it right. Use the Ball Speed slider
-    to make the ball slower by dragging it left, or faster by dragging it right.
-
-'
+  m_Text: "How To Play\n\nThe objective of the game is to roll the ball through a
+    maze by tilting your device. Hold your device flat initially and then tip it in
+    the direction you want the ball to roll. Try to get the ball to the end point
+    as quick as possible. A timer will record how quick you are at solving the maze.\n\nHow
+    to Select a Maze\n\nFrom the Main Menu go to Select Maze. Here you will find mazes
+    that were created by importing a picture from your device and setting start and
+    end points. Select the maze you wish to play and click Play Maze.\n\nHow to Create
+    a Maze\n\nDraw a maze on a piece of white paper using a thick black marker for
+    lines. In the AmazeBalls Main Menu, go to Create Maze. Click Start\\Stop Camera,
+    authorize the app to access your camera when asked, and click Start\\Stop Camera
+    again. Aim the camera view at your maze, then click Capture Image to save the
+    picture. The game will load with your picture. \n\nHow to Adjust Ball Speed and
+    Size\n\nFrom the Main Menu, go to Options. Use the Ball Size slider to make the
+    ball smaller by dragging it left, or larger by dragging it right. Use the Ball
+    Speed slider to make the ball slower by dragging it left, or faster by dragging
+    it right.\n"
 --- !u!222 &1995626520
 CanvasRenderer:
   m_ObjectHideFlags: 0
