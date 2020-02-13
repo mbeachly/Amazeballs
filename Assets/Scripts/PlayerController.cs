@@ -5,90 +5,29 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Ball Size
-    private static float ballSize = 1f; // Default = 1
-
-    // Ball Speed
-    private static float ballSpeed = 6f; // Default = 5
-
-    // Ball Texture
-    private static string textureName = "hubble"; // Default = hubble
-
-    // Start Point Coordinates
-    public static int startX = 0;
-    public static int startZ = 0;
-
     private Rigidbody rb;
-
-    /// <summary>
-    /// Sets Ball Size (radius of ball)
-    /// </summary>
-    /// <param name="newSize">floating point number (input from slider)</param>
-    public void SetBallSize(float newSize)
-    {
-        ballSize = newSize / 3;
-    }
-    /// <summary>
-    /// Gets Ball Size (radius of ball)
-    /// </summary>
-    /// <returns>integer (slider should be set to only whole numbers)</returns>
-    public int GetBallSize()
-    {   // Had issues with rounding without Ceil
-        return (int)Mathf.Ceil(3 * ballSize);
-    }
-    /// <summary>
-    /// Sets Ball Speed
-    /// </summary>
-    /// <param name="newSpeed">floating point number (input from slider)</param>
-    public void SetBallSpeed(float newSpeed)
-    {
-        ballSpeed = newSpeed * 2;
-    }
-    /// <summary>
-    /// Gets Ball Speed
-    /// </summary>
-    /// <returns>integer (slider should be set to only whole numbers)</returns>
-    public int GetBallSpeed()
-    {
-        return (int)ballSpeed / 2;
-    }
-
-    /// <summary>
-    /// Set ball texture to space theme
-    /// </summary>
-    public void SetBallSpace()
-    {
-        textureName = "hubble";
-    }
-
-    /// <summary>
-    /// Set ball texture to smiley face theme
-    /// </summary>
-    public void SetBallSmiley()
-    {
-        textureName = "smiley";
-    }
-    /// <summary>
-    /// Set ball texture to marble theme
-    /// </summary>
-    public void SetBallMarble()
-    {
-        textureName = "marble";
-    }
+    private float ballSpeed;
+    private float ballSize;
 
     void Start()
-    {
-        rb = GetComponent<Rigidbody>();
+    {   // Check if ball exists (won't in scenes other than MazeGame)
+        if (GetComponent<Rigidbody>() != null)
+        { 
+            rb = GetComponent<Rigidbody>();
+            ballSize = Globals.ballSize;
 
-        // Drop ball at start point
-        rb.transform.position = new Vector3(startX, ballSize, startZ);
-        // Set ball to specified size
-        rb.gameObject.transform.localScale = new Vector3(ballSize, ballSize, ballSize);
+            // Drop ball at start point
+            rb.transform.position = new Vector3(Globals.startX, ballSize, Globals.startZ);
+            // Set ball to specified size
+            rb.gameObject.transform.localScale = new Vector3(ballSize, ballSize, ballSize);
 
-        // Textures must be in Resources folder for Resources Load to work
-        Texture2D ballTexture = Resources.Load(textureName) as Texture2D;
-        Renderer ballRenderer = GetComponent<Renderer>();
-        ballRenderer.material.SetTexture("_MainTex", ballTexture);
+            // Textures must be in Resources folder for Resources Load to work
+            Texture2D ballTexture = Resources.Load(Globals.ballTexName) as Texture2D;
+            Renderer ballRenderer = GetComponent<Renderer>();
+            ballRenderer.material.SetTexture("_MainTex", ballTexture);
+
+            ballSpeed = Globals.ballSpeed;
+        }
     }
 
 
@@ -110,6 +49,5 @@ public class PlayerController : MonoBehaviour
         // Rotate so that up is perpendicular to phone surface
         tilt = Quaternion.Euler(90, 0, 0) * tilt;
         rb.AddForce(tilt * ballSpeed);
-        
     }
 }
