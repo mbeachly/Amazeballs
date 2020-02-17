@@ -75,5 +75,6 @@ public class CaptureImage : MonoBehaviour
             scene = gameObject.AddComponent<SceneLoader>();
             scene.LoadMainMenu();
         }
+
     }
 }
