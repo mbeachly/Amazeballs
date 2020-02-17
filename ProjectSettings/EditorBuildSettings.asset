@@ -26,7 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/WinGame.unity
     guid: e457b90957bb2ad4c85458f685182e33
-  - enabled: 1
-    path: Assets/Scenes/SelectMaze.unity
+  - enabled: 0
+    path: Assets/__DELETED_GUID_Trash/f4b5f22eef075ef45822bfea1740eb6a
     guid: f4b5f22eef075ef45822bfea1740eb6a
   m_configObjects: {}
