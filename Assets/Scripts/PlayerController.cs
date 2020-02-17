@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
         // https://www.youtube.com/watch?v=fsEkZLBeTJ8
         Vector3 tilt = Input.acceleration;
         // Rotate so that up is perpendicular to phone surface
-        tilt = Quaternion.Euler(90, 0, 0) * tilt;
+        tilt = Quaternion.Euler(90, 90, 0) * tilt;
         rb.AddForce(tilt * Globals.ballSpeed);
     }
 }

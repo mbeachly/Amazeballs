@@ -48,10 +48,10 @@ public class nativeGalleryStart : MonoBehaviour
 					//Space.GetComponent<Image>().sprite = mySprite;
 					GameObject.Find("Space").GetComponent<Image>().sprite = mySprite;
 					
-					byte[] bytes = texture.EncodeToPNG();
+					//byte[] bytes = texture.EncodeToPNG();
 					//var tex = new Texture2D(1, 1);
 					Globals.tex = texture;
-					Globals.tex.LoadImage(bytes);
+					//Globals.tex.LoadImage(bytes);
 				}
 			}, "Select a PNG image", "image/png" );
 
