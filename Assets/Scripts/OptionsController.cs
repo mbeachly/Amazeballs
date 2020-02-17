@@ -8,17 +8,40 @@ public class OptionsController : MonoBehaviour
     Slider sizeSlider; 
     Slider speedSlider;
 
-    PlayerController player;
+    public void SetBallSpace()
+    {
+        Globals.ballTexName = "hubble";
+    }
+
+    public void SetBallSmiley()
+    {
+        Globals.ballTexName = "smiley";
+    }
+
+    public void SetBallMarble()
+    {
+        Globals.ballTexName = "marble";
+    }
+    
+    public void SetBallSize(float newSize)
+    {
+        Globals.ballSize = newSize / 3;
+    }
+
+    public void SetBallSpeed(float newSpeed)
+    {
+        Globals.ballSpeed = newSpeed * 2;
+    }
+
 
     // Start is called when Options scene is loaded
     void Start()
     {
-        player = GameObject.Find("Player Controller").GetComponent<PlayerController>();
         // Load current settings
         sizeSlider = GameObject.Find("SizeSlider").GetComponent<Slider>();
-        sizeSlider.value = player.GetBallSize(); 
+        sizeSlider.value = Globals.GetBallSize(); 
 
         speedSlider = GameObject.Find("SpeedSlider").GetComponent<Slider>();
-        speedSlider.value = player.GetBallSpeed();
+        speedSlider.value = Globals.GetBallSpeed();
     }
 }
