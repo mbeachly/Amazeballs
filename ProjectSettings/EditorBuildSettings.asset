@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SelectMaze.unity
     guid: fe62979f3714cf64187a19e7d96a098c
+  - enabled: 1
+    path: Assets/Scenes/MazeGame2.unity
+    guid: d8f129f557762664ca6e5d895a5c1818
   m_configObjects: {}
