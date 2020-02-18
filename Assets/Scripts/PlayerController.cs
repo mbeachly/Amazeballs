@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
         Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
-        rb.AddForce(movement * ballSpeed);
+        rb.AddForce(movement * Globals.ballSpeed);
         */
         
         // Phone accelerometer controls
@@ -43,5 +43,6 @@ public class PlayerController : MonoBehaviour
         // Rotate so that up is perpendicular to phone surface
         tilt = Quaternion.Euler(90, 90, 0) * tilt;
         rb.AddForce(tilt * Globals.ballSpeed);
+        
     }
 }
