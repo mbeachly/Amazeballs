@@ -18,19 +18,20 @@ public class MeshGenerator : MonoBehaviour
         int maxSize = 256; // Maximum mesh size is 256 by 265
         
         // Sample pixels on intervals 
-        // and assign greyscale values as heights to mesh vertices
         int pixelSkipX = (int)Mathf.Ceil((float)hMap.width  / (float)maxSize); 
         int pixelSkipY = (int)Mathf.Ceil((float)hMap.height / (float)maxSize);
         // How many vertices will be sampled in each dimension
-        int meshSizeX  = 100 * hMap.width  / hMap.width;
-        int meshSizeY  = 100 * hMap.height / hMap.height;
+        int meshSizeX  = hMap.width  / pixelSkipX;
+        int meshSizeY  = hMap.height / pixelSkipY;
 
-        // BAD CODE
-        float meshScaleX = Screen.width / meshSizeX;
-        float meshScaleY = Screen.height / meshSizeY;
-        float imageScale = 12.75f; // Again this is bad
+        float meshScaleX = ((float)Screen.width / (float)meshSizeX) / 50; // (100 pixels per unit)/2 =50
+        float meshScaleY = ((float)Screen.height / (float)meshSizeY) / 50;
+        float imageScaleX = (float) meshSizeX / (float)Screen.width;
+        float imageScaleY = (float) meshSizeY / (float)Screen.height;
 
-        //Loop through all the pixels in the 
+        //Loop through all the pixels in the image
+        //Sample pixels on intervals
+        //And assign greyscale values as heights to mesh vertices
         for (int i = 0; i < meshSizeX; i++)
         {
             for (int j = 0; j < meshSizeY; j++)
@@ -55,10 +56,10 @@ public class MeshGenerator : MonoBehaviour
 
         Vector2[] uvs = new Vector2[verts.Count];
         for (var i = 0; i < uvs.Length; i++) //Give UV coords X,Z world coords
-            uvs[i] = new Vector2(verts[i].x/imageScale, verts[i].z/imageScale);
+            uvs[i] = new Vector2(verts[i].x*imageScaleX, verts[i].z*imageScaleY);
 
         GameObject plane = new GameObject("ProcPlane"); //Create GO and add necessary components
-        plane.transform.position = new Vector3(-5, 0, -5); // Center maze
+        plane.transform.position = new Vector3(-Screen.width/100, 0, -Screen.height/100); // Center maze
         plane.AddComponent<MeshFilter>();
         plane.AddComponent<MeshRenderer>();
         plane.AddComponent<MeshCollider>(); //Need collider for ball to roll in mesh
