@@ -9,36 +9,47 @@ public class MeshGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Texture2D hMap = Resources.Load("Maze512") as Texture2D; // Test image
-        
+
+        //Texture2D hMap = Resources.Load("Maze512") as Texture2D; // Test image
+        Texture2D hMap = Resources.Load("MazeTall") as Texture2D; // Test image
+
         List<Vector3> verts = new List<Vector3>();
         List<int> tris = new List<int>();
-        int meshSize = 256; // How many vertices wide? Maximum is around 265
-        int meshScale = 20; // I don't know what I'm doing, there must be a smarter way than this
-        float imageScale = 12.75f; // Again this is bad
-        int pixelSkipX = 2; 
-        int pixelSkipY = 2;
+        int maxSize = 256; // Maximum mesh size is 256 by 265
+        
+        // Sample pixels on intervals 
+        // and assign greyscale values as heights to mesh vertices
+        int pixelSkipX = (int)Mathf.Ceil((float)hMap.width  / (float)maxSize); 
+        int pixelSkipY = (int)Mathf.Ceil((float)hMap.height / (float)maxSize);
+        // How many vertices will be sampled in each dimension
+        int meshSizeX  = 100 * hMap.width  / hMap.width;
+        int meshSizeY  = 100 * hMap.height / hMap.height;
 
-        //Bottom left section of the map, other sections are similar
-        for (int i = 0; i < meshSize; i++)
+        // BAD CODE
+        float meshScaleX = Screen.width / meshSizeX;
+        float meshScaleY = Screen.height / meshSizeY;
+        float imageScale = 12.75f; // Again this is bad
+
+        //Loop through all the pixels in the 
+        for (int i = 0; i < meshSizeX; i++)
         {
-            for (int j = 0; j < meshSize; j++)
+            for (int j = 0; j < meshSizeY; j++)
             {
                 //Add each new vertex in the plane
                 //-1 multiplyer sinks white areas 1 unit below black areas
-                verts.Add(new Vector3((float)i/meshScale, 
+                verts.Add(new Vector3((float)i*meshScaleX, 
                                         -1 * hMap.GetPixel(i*pixelSkipX, j*pixelSkipY).grayscale, 
-                                        (float)j/meshScale));
+                                        (float)j*meshScaleY));
 
                 //Skip if a new square on the plane hasn't been formed
                 if (i == 0 || j == 0) continue;
                 //Adds the index of the three vertices in order to make up each of the two tris
-                tris.Add(meshSize * i + j); //Top right
-                tris.Add(meshSize * i + j - 1); //Bottom right
-                tris.Add(meshSize * (i - 1) + j - 1); //Bottom left - First triangle
-                tris.Add(meshSize * (i - 1) + j - 1); //Bottom left 
-                tris.Add(meshSize * (i - 1) + j); //Top left
-                tris.Add(meshSize * i + j); //Top right - Second triangle
+                tris.Add(meshSizeY * i + j); //Top right
+                tris.Add(meshSizeY * i + j - 1); //Bottom right
+                tris.Add(meshSizeY * (i - 1) + j - 1); //Bottom left - First triangle
+                tris.Add(meshSizeY * (i - 1) + j - 1); //Bottom left 
+                tris.Add(meshSizeY * (i - 1) + j); //Top left
+                tris.Add(meshSizeY * i + j); //Top right - Second triangle
             }
         }
 
