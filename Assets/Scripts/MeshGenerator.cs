@@ -9,7 +9,6 @@ public class MeshGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         //Texture2D hMap = Resources.Load("Maze512") as Texture2D; // Test image
         Texture2D hMap = Resources.Load("MazeTall") as Texture2D; // Test image
 
@@ -17,17 +16,18 @@ public class MeshGenerator : MonoBehaviour
         List<int> tris = new List<int>();
         int maxSize = 256; // Maximum mesh size is 256 by 265
         
-        // Sample pixels on intervals 
+        // Sample pixels on intervals since mesh vertices are limited
         int pixelSkipX = (int)Mathf.Ceil((float)hMap.width  / (float)maxSize); 
         int pixelSkipY = (int)Mathf.Ceil((float)hMap.height / (float)maxSize);
         // How many vertices will be sampled in each dimension
-        int meshSizeX  = hMap.width  / pixelSkipX;
+        int meshSizeX  = hMap.width / pixelSkipX;
         int meshSizeY  = hMap.height / pixelSkipY;
-
-        float meshScaleX = ((float)Screen.width / (float)meshSizeX) / 50; // (100 pixels per unit)/2 =50
-        float meshScaleY = ((float)Screen.height / (float)meshSizeY) / 50;
-        float imageScaleX = (float) meshSizeX / (float)Screen.width;
-        float imageScaleY = (float) meshSizeY / (float)Screen.height;
+        // Orthographic camera size in pixels (Screen.width and height aren't correct when using orthographic)
+        float camSizeY = Camera.main.orthographicSize * 100; // orthographicSize is half the screen height, 100 pixels per unit
+        float camSizeX = camSizeY * Screen.width / Screen.height;
+        // How much to stretch the mesh to fill the screen
+        float meshScaleX = ((float)camSizeX / (float)meshSizeX) / 50; // (100 pixels per unit)/2 =50
+        float meshScaleY = ((float)camSizeY / (float)meshSizeY) / 50;
 
         //Loop through all the pixels in the image
         //Sample pixels on intervals
@@ -55,11 +55,12 @@ public class MeshGenerator : MonoBehaviour
         }
 
         Vector2[] uvs = new Vector2[verts.Count];
-        for (var i = 0; i < uvs.Length; i++) //Give UV coords X,Z world coords
-            uvs[i] = new Vector2(verts[i].x*imageScaleX, verts[i].z*imageScaleY);
+        for (var i = 0; i < uvs.Length; i++) //Give UV shader scaling coordinates
+            uvs[i] = new Vector2(50*verts[i].x/camSizeX, 50*verts[i].z/camSizeY);
 
         GameObject plane = new GameObject("ProcPlane"); //Create GO and add necessary components
-        plane.transform.position = new Vector3(-Screen.width/100, 0, -Screen.height/100); // Center maze
+        // Center the mesh
+        plane.transform.position = new Vector3(-camSizeX/100, 0, -camSizeY/100); 
         plane.AddComponent<MeshFilter>();
         plane.AddComponent<MeshRenderer>();
         plane.AddComponent<MeshCollider>(); //Need collider for ball to roll in mesh
