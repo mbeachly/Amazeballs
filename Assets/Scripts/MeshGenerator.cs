@@ -9,8 +9,7 @@ public class MeshGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Texture2D hMap = Resources.Load("Maze512") as Texture2D; // Test image
-        //Texture2D hMap = Resources.Load("MazeTall") as Texture2D; // Test image
+        //Texture2D hMap = Resources.Load("smiley") as Texture2D; // Test image
         Texture2D hMap = Globals.tex;
 
         List<Vector3> verts = new List<Vector3>(); // Mesh vertice coordinates
@@ -41,14 +40,19 @@ public class MeshGenerator : MonoBehaviour
         for (int i = 0; i < meshSizeX; i++) // X dimension
         {
             for (int j = 0; j < meshSizeY; j++) // Y dimension
-            {   // Get grayscale value of pixel and determine if it is wall or floor
-                if (hMap.GetPixel(i * pixelSkipX, j * pixelSkipY).grayscale > threshBW)
+            {   // Check for border vertices
+                if (i == 0 || j == 0 || i == meshSizeX - 1 || j == meshSizeY - 1)
                 {
-                    vertHeight = -2f; // Sink white areas 2 units below black areas
+                    vertHeight = 2f; // Extra high border wall: height = 2
                 }
-                else
+                // Get grayscale value of pixel and determine if it is wall or floor
+                else if (hMap.GetPixel(i * pixelSkipX, j * pixelSkipY).grayscale > threshBW)
                 {
-                    vertHeight = 0f;
+                    vertHeight = -2f; // Sink white areas (floors) 2 units below black areas (walls)
+                }
+                else // Wall
+                {
+                    vertHeight = 0f; // Wall height = 0
                 }
                 // Append each new vertex in the plane
                 verts.Add(new Vector3((float)i * meshScaleX, vertHeight, (float)j * meshScaleY));
