@@ -12,6 +12,14 @@ public class SceneLoader : MonoBehaviour
     }
 
     // Go to Capture Image
+    public void LoadCaptureImageMainMenu()
+    {
+        if (Globals.gameSaved == false)
+            SceneManager.LoadScene("CaptureImage");
+        else
+            SceneManager.LoadScene("LoadSavedMaze");
+    }
+
     public void LoadCaptureImage()
     {
         SceneManager.LoadScene("CaptureImage");

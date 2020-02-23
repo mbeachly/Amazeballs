@@ -18,6 +18,10 @@ public static class Globals
 
     public static string ballTexName = "hubble";
 
+    public static GameObject plane = new GameObject("ProcPlane"); // Create game object
+
+    public static bool gameSaved = false;
+
     // Set start point
     public static int startX = 0;
     public static int startZ = 0;
