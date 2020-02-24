@@ -10,7 +10,7 @@ using UnityEngine.UI;
 public static class Globals
 {
     // Set image for background
-    public static string backgroundFile = "/Materials/PunchbowlFallsU.png";
+    public static string backgroundFile = "/Resources/MazeTall.jpg";
     // Ball Size
     public static float ballSize = 1f; // Default = 1
 

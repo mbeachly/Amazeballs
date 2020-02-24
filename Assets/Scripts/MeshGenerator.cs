@@ -16,7 +16,6 @@ public class MeshGenerator : MonoBehaviour
             Instantiate(plane);
         }
         else { 
-
             //Texture2D hMap = Resources.Load("MazeTall") as Texture2D; // Test image
             Texture2D hMap = Globals.tex;
 
@@ -100,13 +99,12 @@ public class MeshGenerator : MonoBehaviour
             plane.AddComponent<MeshFilter>(); // Add Mesh Filter to Game Object
             plane.AddComponent<MeshRenderer>(); // Add Mesh Renderer to Game Object
             plane.AddComponent<MeshCollider>(); // Need collider for ball to roll in mesh
-            Mesh procMesh = new Mesh(); // Instantiate a mes
+            Mesh procMesh = new Mesh(); // Instantiate a mesh
             procMesh.vertices = verts.ToArray(); // Assign verts, uvs, and tris to the mesh
             procMesh.uv = uvs; // Assign uv vector for mapping image to mesh vertices
             procMesh.triangles = tris.ToArray(); // Assign vertices to triangles
             procMesh.RecalculateNormals(); // Make sure triangles are facing upwards
             plane.GetComponent<MeshFilter>().mesh = procMesh; // Assign Mesh object to MeshFilter
-
             plane.GetComponent<Renderer>().material.mainTexture = hMap; // Display the maze image
             plane.GetComponent<MeshCollider>().sharedMesh = procMesh; // Assign collider mesh or ball will fall through
             Globals.plane = plane;
