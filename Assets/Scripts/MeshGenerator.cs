@@ -31,7 +31,7 @@ public class MeshGenerator : MonoBehaviour
 
         // Orthographic camera size in pixels (Screen.width and height aren't correct when using orthographic)
         float camSizeY = Camera.main.orthographicSize * 100; // orthographicSize is half the screen height, 100 pixels per unit
-        float camSizeX = camSizeY * Screen.height / Screen.width;
+        float camSizeX = camSizeY * Screen.width / Screen.height;
 
         // How much to stretch the mesh to fill the screen
         float meshScaleX = ((float)camSizeX / (float)meshSizeX) / 50; // (100 pixels per unit)/2 = 50
