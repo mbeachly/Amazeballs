@@ -37,12 +37,14 @@ public class PlayerController : MonoBehaviour
         rb.AddForce(movement * Globals.ballSpeed);
         */
         
+        
         // Phone accelerometer controls
         // https://www.youtube.com/watch?v=fsEkZLBeTJ8
         Vector3 tilt = Input.acceleration;
         // Rotate so that up is perpendicular to phone surface
         tilt = Quaternion.Euler(90, 0, 0) * tilt;
         rb.AddForce(tilt * Globals.ballSpeed);
+        
         
     }
 }

@@ -32,8 +32,9 @@ public class CaptureImage : MonoBehaviour
             deviceCam.Stop();
             deviceCam = null;
             camDisplay.texture = null;
+            Globals.gameSaved = false;
             GameObject gameObject = new GameObject("SceneLoader");
-            scene = gameObject.AddComponent <SceneLoader>();
+            scene = gameObject.AddComponent<SceneLoader>();
             scene.LoadGame();
         }
         else { //If a camera exists and is currently off, play back facing camera when start camera button clicked
