@@ -17,7 +17,11 @@ public class SceneLoader : MonoBehaviour
         if (Globals.gameSaved == false)
             SceneManager.LoadScene("CaptureImage");
         else
+        {
             SceneManager.LoadScene("LoadSavedMaze");
+            Globals.inCaptureImage = true;
+            Globals.inSelectMaze = false;
+        }
     }
 
     public void LoadCaptureImage()
@@ -26,6 +30,26 @@ public class SceneLoader : MonoBehaviour
     }
 
     // Go to Select Maze
+    public void LoadSelectMazeMainMenu()
+    {
+        if (Globals.gameSaved == false)
+            SceneManager.LoadScene("SelectMaze");
+        else
+        {
+            SceneManager.LoadScene("LoadSavedMaze");
+            Globals.inSelectMaze = true;
+            Globals.inCaptureImage = false;
+        }
+    }
+
+    public void CheckImageLoadScene()
+    {
+        if (Globals.inCaptureImage == true)
+            SceneManager.LoadScene("CaptureImage");
+        else if (Globals.inSelectMaze == true)
+            SceneManager.LoadScene("SelectMaze");
+    }
+
     public void SelectMaze()
     {
         SceneManager.LoadScene("SelectMaze");

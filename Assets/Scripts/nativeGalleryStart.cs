@@ -79,6 +79,7 @@ public class nativeGalleryStart : MonoBehaviour
 
 					//byte[] bytes = texture.EncodeToPNG();
 					//var tex = new Texture2D(1, 1);
+					Globals.gameSaved = false;
 					Globals.tex = myTexture2D;
 					//Globals.tex.LoadImage(bytes);
 				}
