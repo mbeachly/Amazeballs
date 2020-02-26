@@ -29,7 +29,7 @@ public class nativeGalleryStart : MonoBehaviour
 			return;
 		else
 		{
-			maxSize = 512;
+			maxSize = 1024;
 			
 			NativeGallery.Permission permission = NativeGallery.GetImageFromGallery( ( path ) =>
 			{
@@ -45,7 +45,8 @@ public class nativeGalleryStart : MonoBehaviour
 						return;
 					}
 
-					// Make a readable copy of texture since the 
+					// Make a readable copy of texture since texture loaded by native gallery is not
+					// The texture must be readable/writeable in order to be applied to a mesh
 					// Source: https://support.unity3d.com/hc/en-us/articles/206486626-How-can-I-get-pixels-from-unreadable-textures-
 					// Create a temporary RenderTexture of the same size as the texture
 					RenderTexture tmp = RenderTexture.GetTemporary(
@@ -72,16 +73,12 @@ public class nativeGalleryStart : MonoBehaviour
 					RenderTexture.ReleaseTemporary(tmp);
 					// "myTexture2D" now has the same pixels from "texture" and it's readable.
 
-
+					// Display the selected picture in the background for a preview
 					mySprite = Sprite.Create(myTexture2D, new Rect(0.0f, 0.0f, myTexture2D.width, myTexture2D.height), new Vector2(0.5f, 0.5f), 100.0f);
-					//Space.GetComponent<Image>().sprite = mySprite;
 					GameObject.Find("Space").GetComponent<Image>().sprite = mySprite;
 
-					//byte[] bytes = texture.EncodeToPNG();
-					//var tex = new Texture2D(1, 1);
 					Globals.gameSaved = false;
 					Globals.tex = myTexture2D;
-					//Globals.tex.LoadImage(bytes);
 				}
 			}, "Select a PNG image", "image/png" );
 

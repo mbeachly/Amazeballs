@@ -37,10 +37,6 @@ public class MeshGenerator : MonoBehaviour
         float meshScaleX = ((float)camSizeX / (float)meshSizeX) / 50; // (100 pixels per unit)/2 = 50
         float meshScaleY = ((float)camSizeY / (float)meshSizeY) / 50;
 
-        // Grayscale threshold value to distinguish wall from floor
-        // White to light-gray = floor, dark-gray to black = wall
-        float threshBW = 0.4f; // 0 = black, 1 = white
-
         // Height-map value determined from pixel grayscale value
         float vertHeight;
 
@@ -56,7 +52,7 @@ public class MeshGenerator : MonoBehaviour
                     vertHeight = 2f; // Extra high border wall: height = 2
                 }
                 // Get grayscale value of pixel and determine if it is wall or floor
-                else if (hMap.GetPixel(i * pixelSkipX, j * pixelSkipY).grayscale > threshBW)
+                else if (hMap.GetPixel(i * pixelSkipX, j * pixelSkipY).grayscale > Globals.threshBW)
                 {
                     vertHeight = -2f; // Sink white areas (floors) 2 units below black areas (walls)
                 }

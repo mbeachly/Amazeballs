@@ -24,6 +24,10 @@ public static class Globals
 
     public static bool inSelectMaze = false;
 
+    // Grayscale threshold value to distinguish wall from floor
+    // White to light-gray = floor, dark-gray to black = wall
+    public static float threshBW = 0.4f; // 0 = black, 1 = white
+
     // Set start point
     public static int startX = 0;
     public static int startZ = 0;
