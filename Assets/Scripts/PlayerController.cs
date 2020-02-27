@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+		rb = GetComponent<Rigidbody>();
+		/*
         if (GetComponent<Rigidbody>() != null)
         {
             rb = GetComponent<Rigidbody>();
@@ -22,6 +24,7 @@ public class PlayerController : MonoBehaviour
             Renderer ballRenderer = GetComponent<Renderer>();
             ballRenderer.material.SetTexture("_MainTex", ballTexture);
         }
+		*/
     }
 
 

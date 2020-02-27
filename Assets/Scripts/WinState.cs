@@ -5,20 +5,22 @@ using UnityEngine;
 public class WinState : MonoBehaviour
 {
     SceneLoader scene;
-
     // Load win scene when ball triggers red plane
 
     private void Start()
-    {   
-        transform.position = new Vector3(Globals.endX, 0.5F, Globals.endZ);
+    {  
+        //transform.position = new Vector3(Globals.endX, 0.5F, Globals.endZ);
     }
 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
-        GameObject gameObject = new GameObject("SceneLoader");
-        scene = gameObject.AddComponent<SceneLoader>();
-        scene.LoadWin();
+        if (collision.collider.gameObject.layer == LayerMask.NameToLayer("Balls"))
+		{
+			GameObject gameObject = new GameObject("SceneLoader");
+			scene = gameObject.AddComponent<SceneLoader>();
+			scene.LoadWin();
+		}
     }
     
 }

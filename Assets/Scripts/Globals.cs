@@ -23,11 +23,16 @@ public static class Globals
     public static bool inCaptureImage = false;
 
     public static bool inSelectMaze = false;
+	
+	// Increment through menus in game
+	public static int isShowing = 0;
 
     // Set start point
+	// Hide behind plane until user selects coordinates
     public static int startX = 0;
     public static int startZ = 0;
     // Set end point
+	// Hide behind plane until user selects coordinates
     public static int endX = -3;
     public static int endZ = 0;
 
