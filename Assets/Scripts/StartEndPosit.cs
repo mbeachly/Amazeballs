@@ -36,6 +36,9 @@ public class StartEndPosit : MonoBehaviour
 			
 			// Store start position selected by user
 			startPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+			// Set Y value to 0 otherwise it uses Y value of camera
+			startPosition = new Vector3(startPosition.x, 0, startPosition.z);
+
 			// Place start position icon (Green texture)
 			
 			
@@ -52,9 +55,10 @@ public class StartEndPosit : MonoBehaviour
 			
 			// Store end point selected by user
 			endPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			
-			
-			
+			// Set Y value to 0 otherwise it uses Y value of camera
+			endPosition = new Vector3(endPosition.x, 0, endPosition.z);
+
+
 			// Delete player end position prompt
 			Destroy(GameObject.FindGameObjectWithTag("StopObj"));
 			
