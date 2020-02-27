@@ -27,6 +27,10 @@ public static class Globals
 	// Increment through menus in game
 	public static int isShowing = 0;
 
+    // Grayscale threshold value to distinguish wall from floor
+    // White to light-gray = floor, dark-gray to black = wall
+    public static float threshBW = 0.4f; // 0 = black, 1 = white
+
     // Set start point
 	// Hide behind plane until user selects coordinates
     public static int startX = 0;

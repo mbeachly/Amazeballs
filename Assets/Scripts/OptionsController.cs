@@ -33,6 +33,11 @@ public class OptionsController : MonoBehaviour
         Globals.ballSpeed = newSpeed * 2;
     }
 
+    public void SetEdgeThreshold(float newThresh)
+    {
+        Globals.threshBW = newThresh / 10;
+    }
+
 
     // Start is called when Options scene is loaded
     void Start()

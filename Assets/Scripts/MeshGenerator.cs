@@ -31,15 +31,11 @@ public class MeshGenerator : MonoBehaviour
 
         // Orthographic camera size in pixels (Screen.width and height aren't correct when using orthographic)
         float camSizeY = Camera.main.orthographicSize * 100; // orthographicSize is half the screen height, 100 pixels per unit
-        float camSizeX = camSizeY * Screen.height / Screen.width;
+        float camSizeX = camSizeY * Screen.width / Screen.height;
 
         // How much to stretch the mesh to fill the screen
         float meshScaleX = ((float)camSizeX / (float)meshSizeX) / 50; // (100 pixels per unit)/2 = 50
         float meshScaleY = ((float)camSizeY / (float)meshSizeY) / 50;
-
-        // Grayscale threshold value to distinguish wall from floor
-        // White to light-gray = floor, dark-gray to black = wall
-        float threshBW = 0.4f; // 0 = black, 1 = white
 
         // Height-map value determined from pixel grayscale value
         float vertHeight;
@@ -56,7 +52,7 @@ public class MeshGenerator : MonoBehaviour
                     vertHeight = 2f; // Extra high border wall: height = 2
                 }
                 // Get grayscale value of pixel and determine if it is wall or floor
-                else if (hMap.GetPixel(i * pixelSkipX, j * pixelSkipY).grayscale > threshBW)
+                else if (hMap.GetPixel(i * pixelSkipX, j * pixelSkipY).grayscale > Globals.threshBW)
                 {
                     vertHeight = -2f; // Sink white areas (floors) 2 units below black areas (walls)
                 }
