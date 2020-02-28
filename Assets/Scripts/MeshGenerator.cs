@@ -9,6 +9,8 @@ public class MeshGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Globals.isShowing = 0;
+
         //Texture2D hMap = Resources.Load("MazeTall") as Texture2D; // Test image
         Texture2D hMap = Globals.tex;
 
