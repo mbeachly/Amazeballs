@@ -9,6 +9,7 @@ public class SceneLoader : MonoBehaviour
     public void LoadMainMenu()
     {   // Is there a better way to do this than hardcoding?
         SceneManager.LoadScene("MainMenu");
+        Globals.isShowing = 0;
     }
 
     // Go to Capture Image
