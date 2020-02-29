@@ -11,8 +11,8 @@ public class MeshGenerator : MonoBehaviour
     {
         Globals.isShowing = 0;
 
-        Texture2D hMap = Resources.Load("MazeTall") as Texture2D; // Test image
-        //Texture2D hMap = Globals.tex;
+        //Texture2D hMap = Resources.Load("MazeTall") as Texture2D; // Test image
+        Texture2D hMap = Globals.tex;
 
         List<Vector3> verts = new List<Vector3>(); // Mesh vertice coordinates
         List<int> tris = new List<int>(); // Mesh triangle to vertex assignments
