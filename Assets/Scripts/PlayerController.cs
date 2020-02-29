@@ -10,21 +10,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
 		rb = GetComponent<Rigidbody>();
-		/*
-        if (GetComponent<Rigidbody>() != null)
-        {
-            rb = GetComponent<Rigidbody>();
-            // Drop ball at start point
-            rb.transform.position = new Vector3(Globals.startX, Globals.ballSize, Globals.startZ);
-            // Set ball to specified size
-            rb.gameObject.transform.localScale = new Vector3(Globals.ballSize, Globals.ballSize, Globals.ballSize);
-
-            // Textures must be in Resources folder for Resources Load to work
-            Texture2D ballTexture = Resources.Load(Globals.ballTexName) as Texture2D;
-            Renderer ballRenderer = GetComponent<Renderer>();
-            ballRenderer.material.SetTexture("_MainTex", ballTexture);
-        }
-		*/
     }
 
 

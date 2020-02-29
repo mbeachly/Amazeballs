@@ -68,6 +68,13 @@ public class StartEndPosit : MonoBehaviour
 			GameObject endPoint = Instantiate(EndObj, endPosition, Quaternion.identity) as GameObject;
 
 			GameObject player = Instantiate(PlayerObj, startPosition, Quaternion.identity) as GameObject;
+			
+			// Apply selected options size
+			player.transform.localScale = new Vector3(Globals.ballSize, Globals.ballSize, Globals.ballSize);
+
+			// Apply selected options theme
+			Texture2D ballTexture = Resources.Load(Globals.ballTexName) as Texture2D;
+			player.GetComponent<Renderer>().material.SetTexture("_MainTex", ballTexture);
 		}
 		
     }
