@@ -43,8 +43,8 @@ public static class Globals
     // Declare timeText variable
     public static string timeText;
 
-    public static Texture2D tex = new Texture2D(1, 1);
-    //public static Texture2D tex = Resources.Load("MazeTall") as Texture2D; // Test image
+    //public static Texture2D tex = new Texture2D(1, 1);
+    public static Texture2D tex = Resources.Load("MazeTall") as Texture2D; // Test image
 
     public static int GetBallSize()
     {

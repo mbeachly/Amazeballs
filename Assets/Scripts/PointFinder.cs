@@ -18,11 +18,9 @@ public class PointFinder : MonoBehaviour
         int sampleSizeX = hMap.width / pixelSkip;
         int sampleSizeY = hMap.height / pixelSkip;
 
-        // Orthographic camera size in pixels (Screen.width and height aren't correct when using orthographic)
-        float camSizeY = Camera.main.orthographicSize * 100; // orthographicSize is half the screen height, 100 pixels per unit
+        // Scale pixel coordinates to screen
+        float camSizeY = Camera.main.orthographicSize; // orthographicSize is half the screen height, 100 pixels per unit
         float camSizeX = camSizeY * Screen.width / Screen.height;
-
-        // How much to stretch the mesh to fill the screen
         float meshScaleX = ((float)camSizeX / (float)sampleSizeX) / 50; // (100 pixels per unit)/2 = 50
         float meshScaleY = ((float)camSizeY / (float)sampleSizeY) / 50;
 
@@ -49,12 +47,12 @@ public class PointFinder : MonoBehaviour
                 {   // Is this the start of a new area?
                     if (blueCount == 0)
                     {
+                        blueY = j;
                         blueStartX = i;
                     }
-                    blueY = j;
-                    blueEndX = i;
                     // Increment count of blue area width
                     blueCount = blueCount + pixelSkip;
+                    blueEndX = i;
 
                     // Is this the widest blue area found so far?
                     if (blueCount > maxCount)
@@ -77,9 +75,14 @@ public class PointFinder : MonoBehaviour
 
         // Was a blue area found?
         if (maxCount > 0)
-        {   // Place start point
-            //Vector3 startPosition = new Vector3((maxStartX + maxEndX) / 2, 0, maxY);
-            Vector3 startPosition = new Vector3(0f, 0f, 0f);
+        {
+            float centerY = pixelSkip * meshScaleY * (float)maxY;
+            float centerX = pixelSkip * meshScaleX * ((float)maxStartX + (float)maxEndX) / 2;
+
+            centerY = centerY + camSizeY;
+            centerX = centerX - camSizeX;
+            // Place start point
+            Vector3 startPosition = new Vector3(centerX, 0f, centerY);
             GameObject player = Instantiate(PlayerObj, startPosition, Quaternion.identity) as GameObject;
         }
     }
