@@ -13,7 +13,7 @@ public class Timer : MonoBehaviour
     void Start()
     {
         start = Time.time;
-        
+        timer = GameObject.Find("Timer Text").GetComponent<Text>();
     }
 
     // Update is called once per frame

@@ -18,13 +18,13 @@ public class StartEndPosit : MonoBehaviour
 		if (Globals.pickStep == 0)
 		{
 			// Creates "pick start point"  prompt on screen
-			GameObject StartText = Instantiate(CanvasObjStart, this.transform, false) as GameObject;
-			StartText.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+			//GameObject StartText = Instantiate(CanvasObjStart, this.transform, false) as GameObject;
+			//StartText.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+			Instantiate(CanvasObjStart, this.transform, false);
 		} // Check if end point is not detected
 		else if (Globals.pickStep == 1)
 		{
-			GameObject EndText = Instantiate(CanvasObjStop, this.transform, false) as GameObject;
-			EndText.transform.SetParent(GameObject.FindGameObjectWithTag("Canvas").transform, false);
+			Instantiate(CanvasObjStop, this.transform, false);
 		} // Both start and end were automatically detected
 		else if (Globals.pickStep == 2)
 		{
@@ -88,6 +88,11 @@ public class StartEndPosit : MonoBehaviour
 		// Apply selected options theme
 		Texture2D ballTexture = Resources.Load(Globals.ballTexName) as Texture2D;
 		player.GetComponent<Renderer>().material.SetTexture("_MainTex", ballTexture);
+
+		// Get the timer object and attach the script to update it
+		GameObject TimerController = new GameObject();
+		TimerController.AddComponent<Timer>();
+		Instantiate(TimerController);
 	}
 	
 }
