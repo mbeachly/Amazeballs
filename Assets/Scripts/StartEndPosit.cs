@@ -93,6 +93,9 @@ public class StartEndPosit : MonoBehaviour
 		GameObject TimerController = new GameObject();
 		TimerController.AddComponent<Timer>();
 		Instantiate(TimerController);
+
+		// Set playSavedGame back to false
+		Globals.playSavedGame = false;
 	}
 	
 }

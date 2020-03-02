@@ -20,6 +20,8 @@ public static class Globals
 
     public static bool gameSaved = false;
 
+    public static bool playSavedGame = false;
+
     public static bool inCaptureImage = false;
 
     public static bool inSelectMaze = false;

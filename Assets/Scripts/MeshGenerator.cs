@@ -14,7 +14,8 @@ public class MeshGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Globals.pickStep = 0; // Reset start/end point detection
+        if (Globals.playSavedGame != true)
+            Globals.pickStep = 0; // Reset start/end point detection
 
         Texture2D hMap = Globals.tex; // Load the selected texture (maze photo)
 

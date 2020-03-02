@@ -9,11 +9,20 @@ public class SceneLoader : MonoBehaviour
     public void LoadMainMenu()
     {   // Is there a better way to do this than hardcoding?
         SceneManager.LoadScene("MainMenu");
+        GameController.control.Load();
+    }
+
+    public void LoadMainMenuFromMaze()
+    {
+        GameController.control.Save();
+        SceneManager.LoadScene("MainMenu");
     }
 
     // Go to Capture Image
     public void LoadCaptureImageMainMenu()
     {
+        GameController.control.Load();
+
         if (Globals.gameSaved == false)
             SceneManager.LoadScene("CaptureImage");
         else
@@ -32,6 +41,8 @@ public class SceneLoader : MonoBehaviour
     // Go to Select Maze
     public void LoadSelectMazeMainMenu()
     {
+        GameController.control.Load();
+
         if (Globals.gameSaved == false)
             SceneManager.LoadScene("SelectMaze");
         else
@@ -62,6 +73,13 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("MazeGame2");
     }
 
+    public void LoadSavedGame()
+    {
+        // Skip start and endpoint selection
+        Globals.pickStep = 2;
+        Globals.playSavedGame = true;
+        SceneManager.LoadScene("MazeGame2");
+    }
     // Go to Instructions
     public void LoadInstructions()
     {   
@@ -78,11 +96,13 @@ public class SceneLoader : MonoBehaviour
     public void LoadWin()
     {
         SceneManager.LoadScene("WinGame");
+        GameController.control.Save();
     }
 
     // Exit the application
     public void Quit()
     {
+        GameController.control.Save();
         Application.Quit();
     }
 }
