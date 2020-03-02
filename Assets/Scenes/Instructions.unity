@@ -964,8 +964,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 149042692}
   m_HandleRect: {fileID: 149042691}
   m_Direction: 2
-  m_Value: 1
-  m_Size: 0.07981599
+  m_Value: 0.99993664
+  m_Size: 0.113575175
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1395,8 +1395,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.2, y: -1598.7998}
-  m_SizeDelta: {x: 410.8, y: 3805}
+  m_AnchoredPosition: {x: 8.2, y: -2370}
+  m_SizeDelta: {x: 410.8, y: 5348}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1995626519
 MonoBehaviour:
@@ -1429,22 +1429,57 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "How To Play\n\nThe objective of the game is to roll the ball through a
-    maze by tilting your device. Hold your device flat initially and then tip it in
-    the direction you want the ball to roll. Try to get the ball to the end point
-    as quick as possible. A timer will record how quick you are at solving the maze.\n\nHow
-    to Select a Maze\n\nFrom the Main Menu go to Select Maze. Here you will find mazes
-    that were created by importing a picture from your device and setting start and
-    end points. Select the maze you wish to play and click Play Maze.\n\nHow to Create
-    a Maze\n\nDraw a maze on a piece of white paper using a thick black marker for
-    lines. In the AmazeBalls Main Menu, go to Create Maze. Click Start\\Stop Camera,
-    authorize the app to access your camera when asked, and click Start\\Stop Camera
-    again. Aim the camera view at your maze, then click Capture Image to save the
-    picture. The game will load with your picture. \n\nHow to Adjust Ball Speed and
-    Size\n\nFrom the Main Menu, go to Options. Use the Ball Size slider to make the
-    ball smaller by dragging it left, or larger by dragging it right. Use the Ball
-    Speed slider to make the ball slower by dragging it left, or faster by dragging
-    it right.\n"
+  m_Text: 'Objective of the Game
+
+
+    The objective of the game is to roll the ball through a maze that you drew and/or
+    took a picture of by tilting your device. Hold your device flat initially and
+    then tip it in the direction you want the ball to roll. Try to get the ball to
+    the end point as quick as possible. A timer will record how quick you are at solving
+    the maze.
+
+
+    How to Create a Maze
+
+
+    From the Main Menu go to New Maze. Next click Start Camera. If a prompt appears
+    asking you to allow Amazeballs access to the camera you must allow it access to
+    the camera, the click Start Camera again. Aim the camera at a picture of a maze
+    (next section) so that the preview matches the area you want to play, then click
+    Capture Image.
+
+
+    How to Draw a Maze
+
+
+    Take a peice of white printer paper and draw a maze on it with a thick black marker.
+    Try to space the walls so that a penny could fit through them. You may designate
+    a start point with a solid blue circle about the size of a dime, and an end point
+    with a solid red circle. Take a picture of this maze with your phone camera (with
+    Amazeballs app or Camera app). You could also use a drawing app to create the
+    maze in PNG format.
+
+
+    How to Select a Maze
+
+
+    You can import any photo from your phone and play it as a maze. From the Main
+    Menu go to Select Maze then Select Your Maze. Here you can access photos on your
+    phone by selecting either Photos or Gallery. Select the photo you wish to play
+    and click Play Game.
+
+
+    How to Change Options
+
+
+    From the Main Menu, go to Options. Use the Ball Size slider to make the ball smaller
+    by dragging it left, or larger by dragging it right. Use the Ball Speed slider
+    to make the ball slower by dragging it left, or faster by dragging it right. Change
+    the theme of the ball by clicking the desired them. Use the Edge Threshold slider
+    to reduce the amount of walls by dragging it left, or increase the amount of walls
+    by draggin it right. The next maze you play will apply the selected options.
+
+'
 --- !u!222 &1995626520
 CanvasRenderer:
   m_ObjectHideFlags: 0
