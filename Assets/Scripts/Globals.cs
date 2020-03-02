@@ -29,7 +29,7 @@ public static class Globals
 
     // Grayscale threshold value to distinguish wall from floor
     // White to light-gray = floor, dark-gray to black = wall
-    public static float threshBW = 0.4f; // 0 = black, 1 = white
+    public static float edgeThresh = 0.4f; // 0 = black, 1 = white
 
     // Where ball starts
     //public static float startX = 0;

@@ -41,6 +41,9 @@ public class MeshGenerator : MonoBehaviour
         // Height-map value determined from pixel grayscale value
         float vertHeight;
 
+        // Store color of a pixel
+        Color pixel;
+
         // Loop through all the pixels in the image
         // Sample pixels on intervals
         // Assign heights to vertices based on greyscale values of pixels
@@ -53,13 +56,17 @@ public class MeshGenerator : MonoBehaviour
                     vertHeight = 2f; // Extra high border wall: height = 2
                 }
                 // Get grayscale value of pixel and determine if it is wall or floor
-                else if (hMap.GetPixel(i * pixelSkipX, j * pixelSkipY).grayscale > Globals.threshBW)
+                else //if (hMap.GetPixel(i * pixelSkipX, j * pixelSkipY).grayscale > Globals.threshBW)
                 {
-                    vertHeight = -2f; // Sink white areas (floors) 2 units below black areas (walls)
-                }
-                else // Wall
-                {
-                    vertHeight = 0f; // Wall height = 0
+                    pixel = hMap.GetPixel(i * pixelSkipX, j * pixelSkipY);
+                    if (pixel.b < Globals.edgeThresh && pixel.r < Globals.edgeThresh)
+                    {   // Dark areas are walls
+                        vertHeight = 0f; // Wall height = 0
+                    }
+                    else // Colored areas and white areas are floors
+                    {
+                        vertHeight = -2f; // Sink 2 units below black areas (walls)
+                    }
                 }
                 // Append each new vertex in the plane
                 verts.Add(new Vector3((float)i * meshScaleX, vertHeight, (float)j * meshScaleY));

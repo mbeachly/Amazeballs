@@ -70,7 +70,7 @@ public class OptionsController : MonoBehaviour
 
     public void SetEdgeThreshold(float newThresh)
     {
-        Globals.threshBW = newThresh / 10;
+        Globals.edgeThresh = newThresh / 10;
     }
 
 
