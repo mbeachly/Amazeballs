@@ -22,11 +22,20 @@ public class CaptureImage : MonoBehaviour
         {
             Texture2D image = new Texture2D(deviceCam.width, deviceCam.height);
             image.SetPixels(deviceCam.GetPixels());
-            image.Apply();
-            byte[] bytes = image.EncodeToPNG();
-            var tex = new Texture2D(1, 1);
-            Globals.tex = tex;
-            Globals.tex.LoadImage(bytes);
+
+            // Transverse the pixels in the texture
+            // Otherwise it gets stretched incorrectly
+            Texture2D rotated = new Texture2D(image.height, image.width);
+            for (int i = 0; i < image.width; i++) // X dimension
+            {
+                for (int j = 0; j < image.height; j++) // Z dimension
+                {
+                    rotated.SetPixel(j, image.width - i, image.GetPixel(i, j));
+                }
+            }
+            rotated.Apply(); // Actually apply pixels to GPU
+
+            Globals.tex = rotated;
         
             //Stop live camera, set camera and raw image to null and load maze game
             deviceCam.Stop();
