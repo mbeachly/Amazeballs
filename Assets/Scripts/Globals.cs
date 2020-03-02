@@ -25,26 +25,28 @@ public static class Globals
     public static bool inSelectMaze = false;
 	
 	// Increment through menus in game
-	public static int isShowing = 0;
+	public static int pickStep = 0;
 
     // Grayscale threshold value to distinguish wall from floor
     // White to light-gray = floor, dark-gray to black = wall
     public static float threshBW = 0.4f; // 0 = black, 1 = white
 
-    // Set start point
-	// Hide behind plane until user selects coordinates
-    public static int startX = 0;
-    public static int startZ = 0;
-    // Set end point
-	// Hide behind plane until user selects coordinates
-    public static int endX = -3;
-    public static int endZ = 0;
+    // Where ball starts
+    //public static float startX = 0;
+    //public static float startZ = 0;
+    public static Vector3 startPosition;
+
+    // End of the maze
+    //public static float endX = -1;
+    //public static float endZ = -1;
+    public static Vector3 endPosition;
 
     // Declare timeText variable
     public static string timeText;
 
-    //public static Texture2D tex = new Texture2D(1, 1);
-    public static Texture2D tex = Resources.Load("MazeTall") as Texture2D; // Test image
+    public static Texture2D tex = new Texture2D(1, 1);
+    //public static Texture2D tex = Resources.Load("Maze512") as Texture2D; // Test image
+    //public static Texture2D tex = Resources.Load("MazeTall") as Texture2D; // Test image
 
     public static int GetBallSize()
     {

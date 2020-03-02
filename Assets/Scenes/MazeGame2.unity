@@ -711,7 +711,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 522e6e23a090beb40b5be0b0cf79f0ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerObj: {fileID: 7450727051971945085, guid: dbb48628904e4774481fb31f1b766221,
+  StartPoint: {fileID: 3610584585681919119, guid: 3777199a250169a4d94a9b849a82f234,
     type: 3}
 --- !u!4 &1673129669
 Transform:

@@ -9,7 +9,7 @@ public class MeshGenerator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Globals.isShowing = 0;
+        Globals.pickStep = 0;
 
         Texture2D hMap = Globals.tex;
 
