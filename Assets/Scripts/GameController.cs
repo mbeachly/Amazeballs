@@ -5,16 +5,20 @@ using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
+//Save and load game data so that data persists between game sessions using data serialization, writing out binary files
+//Source:  https://learn.unity.com/tutorial/persistence-saving-and-loading-data#5cf18288edbc2a3094da073b 
+//Source:  https://docs.unity3d.com/Manual/script-Serialization.html
 public class GameController : MonoBehaviour
 {
     public static GameController control;
 
+    //Singleton design pattern, only have one instance of this game object
     void Awake()
     {
         if (control == null)
         {
             DontDestroyOnLoad(gameObject);
-            control = this;
+            control = this; 
         }
         else if (control != this)
         {
@@ -22,6 +26,7 @@ public class GameController : MonoBehaviour
         }
     }
  
+    //Save current start and endpoint position and texture2D data to /mazeInfo.dat
     public void Save()
     {
         BinaryFormatter bf = new BinaryFormatter();
@@ -43,6 +48,7 @@ public class GameController : MonoBehaviour
         file.Close();
     }
 
+    //Load game data from /mazeInfo.dat, deserialize file and set Globals.tex and start and end points
     public void Load()
     {
         if(File.Exists(Application.persistentDataPath + "/mazeInfo.dat"))
@@ -65,12 +71,11 @@ public class GameController : MonoBehaviour
             Globals.endPosition.z = data.endPositionZ;
 
             Globals.gameSaved = data.gameSaved;
-            Debug.Log(Globals.gameSaved);
-            Debug.Log(Globals.endPosition.y);
 
         }
     }
 
+    //Delete /mazeInfo.dat file on button click from Main Menu
     public void DeleteMazeData()
     {
         if (File.Exists(Application.persistentDataPath + "/mazeInfo.dat"))
@@ -80,6 +85,7 @@ public class GameController : MonoBehaviour
     }
 }
 
+//MazeData class contains data to be serialized, allows us to have object to write to file  
 [Serializable]
 class MazeData
 {
