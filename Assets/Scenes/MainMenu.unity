@@ -1492,7 +1492,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 750840717}
+      - m_Target: {fileID: 1460583258}
         m_MethodName: DeleteMazeData
         m_Mode: 1
         m_Arguments:

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class SceneLoader : MonoBehaviour
 {   
@@ -97,6 +98,18 @@ public class SceneLoader : MonoBehaviour
     {
         SceneManager.LoadScene("WinGame");
         GameController.control.Save();
+    }
+
+    //Delete /mazeInfo.dat file on button click from Main Menu
+    public void DeleteMazeData()
+    {
+        if (File.Exists(Application.persistentDataPath + "/mazeInfo.dat"))
+        {
+            File.Delete(Application.persistentDataPath + "/mazeInfo.dat");
+            //Set gameSaved to false, game data no longer present
+            Globals.gameSaved = false;
+
+        }
     }
 
     // Exit the application

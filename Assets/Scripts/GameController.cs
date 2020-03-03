@@ -74,15 +74,6 @@ public class GameController : MonoBehaviour
 
         }
     }
-
-    //Delete /mazeInfo.dat file on button click from Main Menu
-    public void DeleteMazeData()
-    {
-        if (File.Exists(Application.persistentDataPath + "/mazeInfo.dat"))
-        {
-            File.Delete(Application.persistentDataPath + "/mazeInfo.dat");
-        }
-    }
 }
 
 //MazeData class contains data to be serialized, allows us to have object to write to file  
