@@ -25,6 +25,8 @@ public static class Globals
     public static bool inCaptureImage = false;
 
     public static bool inSelectMaze = false;
+
+    public static bool autoDetect = true; // Automatically detect start/end points
 	
 	// Increment through menus in game
 	public static int pickStep = 0;
@@ -58,5 +60,10 @@ public static class Globals
     public static int GetBallSpeed()
     {
         return (int)ballSpeed / 2;
+    }
+
+    public static int GetEdgeThreshold()
+    {
+        return (int)(10 * edgeThresh);
     }
 }

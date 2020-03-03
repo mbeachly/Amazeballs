@@ -7,6 +7,8 @@ public class OptionsController : MonoBehaviour
 {
     Slider sizeSlider; 
     Slider speedSlider;
+    Slider edgeSlider;
+    Toggle detectToggle;
 
     public void SetBallSpace()
     {
@@ -73,6 +75,11 @@ public class OptionsController : MonoBehaviour
         Globals.edgeThresh = newThresh / 10;
     }
 
+    public void SetAutoDetect(bool newSetting)
+    {
+        Globals.autoDetect = newSetting;
+    }
+
 
     // Start is called when Options scene is loaded
     void Start()
@@ -83,5 +90,11 @@ public class OptionsController : MonoBehaviour
 
         speedSlider = GameObject.Find("SpeedSlider").GetComponent<Slider>();
         speedSlider.value = Globals.GetBallSpeed();
+
+        edgeSlider = GameObject.Find("EdgeSlider").GetComponent<Slider>();
+        edgeSlider.value = Globals.GetEdgeThreshold();
+
+        detectToggle = GameObject.Find("DetectToggle").GetComponent<Toggle>();
+        detectToggle.isOn = Globals.autoDetect;
     }
 }

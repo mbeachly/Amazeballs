@@ -4,10 +4,20 @@ using UnityEngine;
 
 public class PointFinder : MonoBehaviour
 {
-    public GameObject StartPoint;
-
     // Start is called before the first frame update
     void Start()
+    {   // Check if autoDetect is enabled
+        if (Globals.autoDetect)
+        {   // Procede to automatically detect start and end points
+            FindPoints();
+        }
+    }
+
+    // Automatically detect start and end points by scanning
+    // texture pixels for blue and red areas. If found,
+    // store start and end coordinates in Globals and set 
+    // flag to skip asking the user to place points.
+    void FindPoints()
     {
         //Texture2D hMap = Resources.Load("MazeTall") as Texture2D; // Test image
         Texture2D hMap = Globals.tex;

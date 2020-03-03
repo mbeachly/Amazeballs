@@ -964,8 +964,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 149042692}
   m_HandleRect: {fileID: 149042691}
   m_Direction: 2
-  m_Value: 0.99993664
-  m_Size: 0.113575175
+  m_Value: 0.99999994
+  m_Size: 0.11837867
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1086,8 +1086,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.5002, y: -15.4}
-  m_SizeDelta: {x: 455, y: 607.4}
+  m_AnchoredPosition: {x: -1.4851, y: -99.8}
+  m_SizeDelta: {x: 455.03, y: 776.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1502011478
 MonoBehaviour:
@@ -1167,7 +1167,7 @@ GameObject:
   - component: {fileID: 1622867021}
   - component: {fileID: 1622867020}
   m_Layer: 5
-  m_Name: MainMenuText
+  m_Name: BackText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1212,7 +1212,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 40
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 4
@@ -1223,7 +1223,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Main Menu
+  m_Text: Back
 --- !u!222 &1622867021
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1245,7 +1245,7 @@ GameObject:
   - component: {fileID: 1835012506}
   - component: {fileID: 1835012505}
   m_Layer: 5
-  m_Name: MainMenuButton
+  m_Name: BackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1266,10 +1266,10 @@ RectTransform:
   m_Father: {fileID: 95885719}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.5, y: -415.5}
-  m_SizeDelta: {x: 455, y: 120.4}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -144, y: -101}
+  m_SizeDelta: {x: 225.2, y: 122.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1835012505
 MonoBehaviour:
@@ -1395,8 +1395,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.2, y: -2370}
-  m_SizeDelta: {x: 410.8, y: 5348}
+  m_AnchoredPosition: {x: 8.2075, y: -2890.1497}
+  m_SizeDelta: {x: 410.82, y: 6556.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1995626519
 MonoBehaviour:
@@ -1429,57 +1429,36 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Objective of the Game
-
-
-    The objective of the game is to roll the ball through a maze that you drew and/or
-    took a picture of by tilting your device. Hold your device flat initially and
-    then tip it in the direction you want the ball to roll. Try to get the ball to
-    the end point as quick as possible. A timer will record how quick you are at solving
-    the maze.
-
-
-    How to Create a Maze
-
-
-    From the Main Menu go to New Maze. Next click Start Camera. If a prompt appears
-    asking you to allow Amazeballs access to the camera you must allow it access to
-    the camera, the click Start Camera again. Aim the camera at a picture of a maze
-    (next section) so that the preview matches the area you want to play, then click
-    Capture Image.
-
-
-    How to Draw a Maze
-
-
-    Take a peice of white printer paper and draw a maze on it with a thick black marker.
-    Try to space the walls so that a penny could fit through them. You may designate
-    a start point with a solid blue circle about the size of a dime, and an end point
-    with a solid red circle. Take a picture of this maze with your phone camera (with
-    Amazeballs app or Camera app). You could also use a drawing app to create the
-    maze in PNG format.
-
-
-    How to Select a Maze
-
-
-    You can import any photo from your phone and play it as a maze. From the Main
-    Menu go to Select Maze then Select Your Maze. Here you can access photos on your
-    phone by selecting either Photos or Gallery. Select the photo you wish to play
-    and click Play Game.
-
-
-    How to Change Options
-
-
-    From the Main Menu, go to Options. Use the Ball Size slider to make the ball smaller
-    by dragging it left, or larger by dragging it right. Use the Ball Speed slider
-    to make the ball slower by dragging it left, or faster by dragging it right. Change
-    the theme of the ball by clicking the desired them. Use the Edge Threshold slider
-    to reduce the amount of walls by dragging it left, or increase the amount of walls
-    by draggin it right. The next maze you play will apply the selected options.
-
-'
+  m_Text: "Objective\n\nThe objective of the game is to roll the ball through a maze
+    that you drew and/or took a picture of by tilting your device. Hold your device
+    flat initially and then tip it in the direction you want the ball to roll. Try
+    to get the ball to the end point as quick as possible. A timer will record how
+    quick you are at solving the maze.\n\nHow to Create a Maze\n\nFrom the Main Menu
+    go to New Maze. Next click Start Camera. If a prompt appears asking you to allow
+    Amazeballs access to the camera you must allow it access to the camera, the click
+    Start Camera again. Aim the camera at a picture of a maze (next section) so that
+    the preview matches the area you want to play, then click Capture Image.\n\nHow
+    to Draw a Maze\n\nTake a standard peice of white printer paper and draw a maze
+    on it with a thick black marker. Try to space the walls so that a penny could
+    fit through them. You may designate a start point with a solid blue circle about
+    the size of a dime, and an end point with a solid red circle. Take a picture of
+    this maze with your phone camera (with Amazeballs app or Camera app). You could
+    also use a drawing app to create the maze in PNG format.\n\nHow to Select a Maze\n\nYou
+    can import any photo from your phone and play it as a maze. From the Main Menu
+    go to Select Maze then Select Your Maze. Here you can access photos on your phone
+    by selecting either Photos or Gallery. Select the photo you wish to play and click
+    Play Game.\n\nHow to Change Ball Size\n\nFrom the Main Menu, go to Options. Use
+    the Ball Size slider to make the ball smaller by dragging it left, or larger by
+    dragging it right. The next maze you play will apply the selected options.\n\nHow
+    to Change Ball Speed\n\nGo to Options. Use the Ball Speed slider to make the ball
+    slower by dragging it left, or faster by dragging it right.\n\nHow to Change Threshold
+    for Edge Detection\n\nGo to Options. Drag the Edge Threshold slider left to only
+    place walls in darker areas, or right to place walls in less dark areas as well.
+    \n\nHow to Disable/Enable Automatic Detection of Start and End Points\n\nGo to
+    Options. Uncheck the Detect Start/End checkbox to disable automatic detection
+    of blue and red areas as start and end points and allow you to specify start and
+    end points. Check the box to re-enable automatic detection so that you don't have
+    to specify start and end points."
 --- !u!222 &1995626520
 CanvasRenderer:
   m_ObjectHideFlags: 0
