@@ -36,21 +36,15 @@ public static class Globals
     public static float edgeThresh = 0.4f; // 0 = black, 1 = white
 
     // Where ball starts
-    //public static float startX = 0;
-    //public static float startZ = 0;
     public static Vector3 startPosition;
 
     // End of the maze
-    //public static float endX = -1;
-    //public static float endZ = -1;
     public static Vector3 endPosition;
 
     // Declare timeText variable
     public static string timeText;
 
-    //public static Texture2D tex = new Texture2D(1, 1);
-    //public static Texture2D tex = Resources.Load("Maze512") as Texture2D; // Test image
-    public static Texture2D tex = Resources.Load("MazeTall") as Texture2D; // Test image
+    public static Texture2D tex = Resources.Load("MazeTall") as Texture2D; 
 
     public static int GetBallSize()
     {
