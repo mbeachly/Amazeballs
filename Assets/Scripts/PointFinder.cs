@@ -75,7 +75,7 @@ public class PointFinder : MonoBehaviour
                 pixel = hMap.GetPixel(i * pixelSkip, j * pixelSkip);
 
                 // Check if pixel is sufficiently blue
-                if (pixel.r < 0.7 * pixel.b && pixel.g < pixel.b)
+                if (pixel.r < Globals.blueThresh * pixel.b && pixel.g < pixel.b)
                 {   // Is this the start of a new area?
                     if (blueCount == 0)
                     {
@@ -101,7 +101,7 @@ public class PointFinder : MonoBehaviour
                 }
 
                 // Check if pixel is sufficiently red
-                if (pixel.b < 0.7 * pixel.r && pixel.g < 0.7 * pixel.r)
+                if (pixel.b < Globals.redThresh * pixel.r && pixel.g < Globals.redThresh * pixel.r)
                 {   // Is this the start of a new area?
                     if (redCount == 0)
                     {

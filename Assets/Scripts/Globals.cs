@@ -35,6 +35,10 @@ public static class Globals
     // White to light-gray = floor, dark-gray to black = wall
     public static float edgeThresh = 0.4f; // 0 = black, 1 = white
 
+    public static float blueThresh = 0.7f; // 0 = black, 1 = white
+
+    public static float redThresh = 0.7f; // 0 = black, 1 = white
+
     // Where ball starts
     public static Vector3 startPosition;
 
@@ -57,7 +61,18 @@ public static class Globals
     }
 
     public static int GetEdgeThreshold()
+    {   // round up because floating point numbers are imprecise
+        // and regular int conversion rounds down
+        return (int)Mathf.Ceil(10 * edgeThresh);
+    }
+
+    public static int GetBlueThreshold()
     {
-        return (int)(10 * edgeThresh);
+        return (int)Mathf.Ceil(10 * blueThresh);
+    }
+
+    public static int GetRedThreshold()
+    {
+        return (int)Mathf.Ceil(10 * redThresh);
     }
 }

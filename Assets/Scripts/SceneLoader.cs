@@ -8,7 +8,7 @@ public class SceneLoader : MonoBehaviour
 {   
     // Go to Main Menu
     public void LoadMainMenu()
-    {   // Is there a better way to do this than hardcoding?
+    {   // Is there a better way to do this than hardcoding scene names?
         SceneManager.LoadScene("MainMenu");
         GameController.control.Load();
     }
