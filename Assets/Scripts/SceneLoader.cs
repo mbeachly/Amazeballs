@@ -100,7 +100,13 @@ public class SceneLoader : MonoBehaviour
         GameController.control.Save();
     }
 
-    //Delete /mazeInfo.dat file on button click from Main Menu
+    // MutePlayButton on click call MusicController.control.PlayPauseMusic()
+    public void MutePlayButton()
+    {
+        MusicController.control.PlayPauseMusic();
+    }
+
+    // Delete /mazeInfo.dat file on button click from Main Menu
     public void DeleteMazeData()
     {
         if (File.Exists(Application.persistentDataPath + "/mazeInfo.dat"))
