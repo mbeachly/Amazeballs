@@ -115,7 +115,6 @@ public class SceneLoader : MonoBehaviour
     // Exit the application
     public void Quit()
     {
-        GameController.control.Save();
         Application.Quit();
     }
 }
