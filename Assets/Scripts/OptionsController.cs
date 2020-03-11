@@ -7,10 +7,6 @@ public class OptionsController : MonoBehaviour
 {
     Slider sizeSlider; 
     Slider speedSlider;
-    Slider edgeSlider;
-    Slider blueSlider;
-    Slider redSlider;
-    Toggle detectToggle;
 
     public void SetBallSpace()
     {
@@ -57,9 +53,6 @@ public class OptionsController : MonoBehaviour
                 }
             }
         }
-
-        GameObject marbleButton = GameObject.Find("MarbleButton");
-        marbleButton.GetComponent<Image>().transform.localScale = new Vector3(6f, 6f, 1f);
     }
     
     public void SetBallSize(float newSize)
@@ -72,26 +65,6 @@ public class OptionsController : MonoBehaviour
         Globals.ballSpeed = newSpeed * 2;
     }
 
-    public void SetEdgeThreshold(float newThresh)
-    {
-        Globals.edgeThresh = newThresh / 10;
-    }
-
-    public void SetBlueThreshold(float newThresh)
-    {
-        Globals.blueThresh = newThresh / 10;
-    }
-
-    public void SetRedThreshold(float newThresh)
-    {
-        Globals.redThresh = newThresh / 10;
-    }
-
-    public void SetAutoDetect(bool newSetting)
-    {
-        Globals.autoDetect = newSetting;
-    }
-
 
     // Start is called when Options scene is loaded
     void Start()
@@ -102,17 +75,5 @@ public class OptionsController : MonoBehaviour
 
         speedSlider = GameObject.Find("SpeedSlider").GetComponent<Slider>();
         speedSlider.value = Globals.GetBallSpeed();
-
-        edgeSlider = GameObject.Find("EdgeSlider").GetComponent<Slider>();
-        edgeSlider.value = Globals.GetEdgeThreshold();
-
-        blueSlider = GameObject.Find("StartSlider").GetComponent<Slider>();
-        blueSlider.value = Globals.GetBlueThreshold();
-
-        redSlider = GameObject.Find("EndSlider").GetComponent<Slider>();
-        redSlider.value = Globals.GetRedThreshold();
-
-        detectToggle = GameObject.Find("DetectToggle").GetComponent<Toggle>();
-        detectToggle.isOn = Globals.autoDetect;
     }
 }

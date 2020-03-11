@@ -93,6 +93,12 @@ public class SceneLoader : MonoBehaviour
         SceneManager.LoadScene("Options");
     }
 
+    // Go to Advanced Options
+    public void LoadAdvOptions()
+    {
+        SceneManager.LoadScene("OptionsAdv");
+    }
+
     // Go to Win Scene
     public void LoadWin()
     {
