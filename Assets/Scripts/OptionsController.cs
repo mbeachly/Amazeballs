@@ -1,8 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
+
+/// <summary>
+/// Allows options to be set such as player ball texture/theme, ball size, and ball speed
+/// Loads current settings from Globals and sets them in the scene when it is loaded
+/// </summary>
 public class OptionsController : MonoBehaviour
 {
     Slider sizeSlider; 

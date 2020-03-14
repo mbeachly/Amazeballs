@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Takes input from options sliders to set threshold values
+/// for detecting start and end points and edges.
+/// Takes input from checkbox to enable or disable
+/// automatic start and end point detection.
+/// </summary>
 public class AdvOptionsController : MonoBehaviour
 {
     Slider edgeSlider;

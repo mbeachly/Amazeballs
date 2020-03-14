@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
+/// <summary>
+/// Gets input from phone accelerometer and applies force to the player ball
+/// </summary>
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody rb;

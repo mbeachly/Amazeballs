@@ -2,6 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Checks if autodetect is enabled for start and end points
+/// Scans pixels in image to find the widest blue spot and red spot
+/// Records the position of the spots as the start and end points
+/// Updates variables in Globals to skip asking player to 
+/// manually select start and end points
+/// </summary>
 public class PointFinder : MonoBehaviour
 {
     // Start is called before the first frame update

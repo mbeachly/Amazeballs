@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.IO;
 
+/// <summary>
+/// Contains methods to switch between scenes, delete a saved game, 
+/// enable/disable music, and quit the application.
+/// </summary>
 public class SceneLoader : MonoBehaviour
 {   
     // Go to Main Menu

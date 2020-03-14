@@ -5,9 +5,12 @@ using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
-//Save and load game data so that data persists between game sessions using data serialization, writing out binary files
-//Source:  https://learn.unity.com/tutorial/persistence-saving-and-loading-data#5cf18288edbc2a3094da073b 
-//Source:  https://docs.unity3d.com/Manual/script-Serialization.html
+/// <summary>
+/// Save and load game data so that data persists between game sessions using data serialization
+/// Writes game data to device in mazeInfo.dat binary file
+/// Source:  https://learn.unity.com/tutorial/persistence-saving-and-loading-data#5cf18288edbc2a3094da073b 
+/// Source:  https://docs.unity3d.com/Manual/script-Serialization.html
+/// </summary>
 public class GameController : MonoBehaviour
 {
     public static GameController control;

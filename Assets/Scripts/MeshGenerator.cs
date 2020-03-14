@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// MeshGenerator loads an texture from an image file,
-// loops through pixels in the image to detect dark areas (walls)
-// light areas (floors), and edge pixels (boundaries).
-// Builds a 3D mesh with vertices corresponding to the sampled
-// pixels and assigns vertex height based on whether the pixel
-// is detected as wall, floor, or boundary. 
-// Source: https://answers.unity.com/questions/1033085/heightmap-to-mesh.html
+/// <summary>
+/// MeshGenerator loads an texture from an image file,
+/// loops through pixels in the image to detect dark areas (walls)
+/// light areas (floors), and edge pixels (boundaries).
+/// Builds a 3D mesh with vertices corresponding to the sampled
+/// pixels and assigns vertex height based on whether the pixel
+/// is detected as wall, floor, or boundary. 
+/// Source: https://answers.unity.com/questions/1033085/heightmap-to-mesh.html
+/// </summary>
 public class MeshGenerator : MonoBehaviour
 { 
     // Start is called before the first frame update

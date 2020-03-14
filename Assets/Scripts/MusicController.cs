@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Plays music track on all scenes of the game unless disabled
+/// Follows singleton design pattern so music is not interupted
+/// by destroying and reinstantiating on every scene.
+/// </summary>
 public class MusicController : MonoBehaviour
 {
     public static MusicController control;

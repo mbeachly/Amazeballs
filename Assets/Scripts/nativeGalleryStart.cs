@@ -3,6 +3,12 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
+
+/// <summary>
+/// Allows user to access Photos or Gallery on Android device
+/// and load the photo. Creates a readable copy of the photo 
+/// to be used for the maze mesh.
+/// </summary>
 public class nativeGalleryStart : MonoBehaviour
 {
 	/*

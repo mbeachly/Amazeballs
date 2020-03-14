@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// This class creates 2D balls that fall down
-// where users click on the start screen
+/// <summary>
+/// This class creates 2D balls that fall down
+/// where user clicks on the intro screen
+/// </summary>
 public class instantiateBall : MonoBehaviour
 {
 	public GameObject BallObj;

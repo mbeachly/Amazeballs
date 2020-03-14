@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// This is a class to store global variables 
-// such as background file path, start point, and endpoint
-// Found on https://forum.unity.com/threads/c-global-variables-available-to-all-scenes.544901/
-// Although this is NOT considered good Object-Oriented programming
+/// <summary>
+/// Stores global variables such as background file path, start point, endpoint
+/// options settings and game time.
+/// Found on https://forum.unity.com/threads/c-global-variables-available-to-all-scenes.544901/
+/// Although this is NOT considered good Object-Oriented programming
+/// </summary>
 public static class Globals
 {
     // Set image for background (Can be removed when MazeGame scene is removed)

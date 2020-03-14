@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Records time since game start in minutes and seconds and updates the timer text box
+/// </summary>
 public class Timer : MonoBehaviour
 {
-    //This is a class to keep track of time since start of game,
-    //updates time and displays minutes and seconds in Timer Text
     public Text timer;
     private float start;
     // Start is called before the first frame update

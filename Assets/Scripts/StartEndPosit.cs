@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Checks if start and end points have been automatically detected
+/// Instantiates text boxes to prompt user to manually pick start and end points 
+/// Records positions that the user chooses for the start and end points 
+/// Starts the game by instantiating the player ball and end point and starts the timer
+/// </summary>
 public class StartEndPosit : MonoBehaviour
 {
     public GameObject CanvasObjStart;
@@ -9,8 +15,6 @@ public class StartEndPosit : MonoBehaviour
 	public GameObject StartObj;
 	public GameObject PlayerObj;
 	public GameObject EndObj;
-	//private static Vector3 startPosition;
-	//private static Vector3 endPosition;
 
 	// Start is called before the first frame update
 	void Start()

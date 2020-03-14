@@ -3,6 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+/// <summary>
+/// Captures an image from device's back-facing camera and attaches it to maze plane
+/// Source:  https://docs.unity3d.com/ScriptReference/WebCamTexture.html
+/// Source:  https://www.youtube.com/watch?v=C_Q1QMomEyM
+/// Source:  https://stackoverflow.com/questions/24496438/can-i-take-a-photo-in-unity-using-the-devices-camera
+/// </summary>
 public class CaptureImage : MonoBehaviour
 {
     WebCamTexture deviceCam;
@@ -10,10 +17,7 @@ public class CaptureImage : MonoBehaviour
     public Text startCaptureCamera;
     SceneLoader scene;
 
-    //Capture an image from device back facing camera and attach to maze plane
-    //Source:  https://docs.unity3d.com/ScriptReference/WebCamTexture.html
-    //Source:  https://www.youtube.com/watch?v=C_Q1QMomEyM
-    //Source:  https://stackoverflow.com/questions/24496438/can-i-take-a-photo-in-unity-using-the-devices-camera
+
     
     public void StartCam()
     {

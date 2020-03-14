@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 //Update camera orthographic size based on device aspect ratio and object plane bounds
 //Source:  Understanding Orthographic Size in Unity, https://www.youtube.com/watch?v=3xXlnSetHPM
 //Source:  https://docs.unity3d.com/ScriptReference/Camera-orthographic.html
