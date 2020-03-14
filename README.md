@@ -89,5 +89,50 @@ Select Your Maze
 1. On the main menu screen click Delete Maze Data, this will delete the maze file saved on your phone that is normally retained between loading the app 
 2. The next time you go to New Maze or Select Maze you will not be asked if you want to load the last saved game
 
+## Instructions: Viewing the Unity Project and Scripts on PC
+
+#### Installing Unity
+1. Go to https://unity3d.com/get-unity/download and click Download Unity Hub
+2. Run the UnityHubSetup.exe file that downloads
+3. Click I Agree, Install and then Finish
+4. Run Unity Hub
+5. Click the person icon in the corner, click Sign in
+6. Create a Unity ID if you don’t have one, otherwise enter your email and password and click Accept
+7. Click Activate New License, select Unity Personal, I don’t use Unity in a professional capacity, and then DONE
+8. Click the corner arrow to go back until you reach Projects, then click ADD
+9. Browse to the folder containing the Amazeballs project and select it (it can be downloaded from https://github.com/mbeachly/Amazeballs)
+10. The Amazeballs project will now be listed under Projects, but now requires that the proper version of Unity Editor be installed
+11. Click the project and click INSTALL when the popup appears showing that the required Editor version is missing
+12. The Add Unity Version popup will appear
+13. If you don’t have Visual Studio installed select Microsoft Visual Studio Community 2019
+14. If you need to build the game and deploy it on Android select Android Build Support, Android SDK & NDK Tools, and OpenJDK
+15. Click Install and allow Unity Hub to make changes to your device, the install may take 20 minutes
+16. Once installs are finished, go back to Projects and double-click the Amazeballs project to open it in Unity Editor (skip new version if it asks)
+
+#### Viewing Scenes
+1. Inside Unity Editor in the Amazeballs project go to the Project tab, then Assets>Scenes to view all the scenes the game is composed of:
+Intro
+MainMenu
+Instructions
+Options
+OptionsAdv
+CaptureImage
+SelectMaze
+LoadSavedMaze
+WinGame
+2. The first scene encountered in the game is the Intro Scene, select and open it for this example
+3. The Intro contains the Amazeballs title (created with TextMeshPro), Start button, and 2D physics ball sprites that collide with 2D wall sprites
+4. The Scene tab shows that the scene is actually composed from two different areas: 
+5. The Canvas box holds the text and button objects (and is 100 times larger than the sprites for some reason)
+6. The Camera box contains the 2D sprites and background, it is located at the bottom left corner of the Canvas so you must zoom in close with the scroll button to be able to see it
+7. The Hierarchy tab shows all the objects by name and order of what objects are children of other objects
+8. Expand objects with the triangle button to see their children
+9. For example, Main Camera has ButtonCanvas as a child, which has StartButton as a child, which has StartText as a child 
+10. If objects on the same Hierarchy level overlap on screen, lower objects in the hierarchy will be appear in front of objects above them
+11. The Inspector tab shows properties of objects such as position, scale, color, text, physics, and scripts
+12. Select Start Button and look at the Inspector, in the Button (Script) section it shows that the OnClick() event calls the SceneLoader.LoadMainMenu function of the Scene Loader object to change to the next scene
+13. Select the Scene Loader object to see that it contains the SceneLoader.cs script
+14. Not-so-obvious objects can have scripts, for example, Main Camera calls the instantiateBall.cs script to make 2D physics balls appear wherever the screen is touched
+
 
  
